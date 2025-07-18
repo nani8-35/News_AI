@@ -10,7 +10,7 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6edf84b7-6bc6-457a-b48c-98f26f97c112) and start prompting.
+Simply visit the (https://news-ai-one-gamma.vercel.app )  and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
