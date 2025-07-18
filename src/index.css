@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 248 100% 99%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 212 100% 97%;
+    --accent-foreground: 221 83% 53%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 83% 53%;
+
+    /* News-specific colors */
+    --news-primary: 221 83% 53%;
+    --news-secondary: 212 100% 97%;
+    --breaking-news: 0 84% 60%;
+    --category-tech: 262 83% 58%;
+    --category-business: 142 71% 45%;
+    --category-sports: 25 95% 53%;
+    --category-health: 159 84% 39%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(212 83% 63%));
+    --gradient-news: linear-gradient(180deg, hsl(248 100% 99%), hsl(220 14% 96%));
+    --gradient-chat: linear-gradient(135deg, hsl(221 83% 53%), hsl(262 83% 58%));
+    
+    /* Shadows */
+    --shadow-card: 0 2px 8px -2px hsl(221 83% 53% / 0.1);
+    --shadow-chat: 0 10px 40px -10px hsl(221 83% 53% / 0.3);
+    --shadow-elevated: 0 8px 32px -8px hsl(221 83% 53% / 0.15);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 18%;
+    --accent-foreground: 221 83% 53%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 221 83% 53%;
+
+    /* Dark mode news colors */
+    --news-primary: 221 83% 53%;
+    --news-secondary: 217 33% 18%;
+    --breaking-news: 0 84% 60%;
+    --category-tech: 262 83% 58%;
+    --category-business: 142 71% 45%;
+    --category-sports: 25 95% 53%;
+    --category-health: 159 84% 39%;
+    
+    /* Dark gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(212 83% 63%));
+    --gradient-news: linear-gradient(180deg, hsl(222 47% 8%), hsl(217 33% 18%));
+    --gradient-chat: linear-gradient(135deg, hsl(221 83% 53%), hsl(262 83% 58%));
+    
+    /* Dark shadows */
+    --shadow-card: 0 2px 8px -2px hsl(0 0% 0% / 0.3);
+    --shadow-chat: 0 10px 40px -10px hsl(221 83% 53% / 0.4);
+    --shadow-elevated: 0 8px 32px -8px hsl(0 0% 0% / 0.25);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .news-gradient {
+    background: var(--gradient-news);
+  }
+  
+  .chat-gradient {
+    background: var(--gradient-chat);
+  }
+  
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .elevated-shadow {
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  .chat-shadow {
+    box-shadow: var(--shadow-chat);
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .animate-pulse-subtle {
+    animation: pulseSubtle 2s infinite;
+  }
+  
+  .category-tech {
+    background: hsl(var(--category-tech) / 0.1);
+    color: hsl(var(--category-tech));
+    border-color: hsl(var(--category-tech) / 0.2);
+  }
+  
+  .category-business {
+    background: hsl(var(--category-business) / 0.1);
+    color: hsl(var(--category-business));
+    border-color: hsl(var(--category-business) / 0.2);
+  }
+  
+  .category-sports {
+    background: hsl(var(--category-sports) / 0.1);
+    color: hsl(var(--category-sports));
+    border-color: hsl(var(--category-sports) / 0.2);
+  }
+  
+  .category-health {
+    background: hsl(var(--category-health) / 0.1);
+    color: hsl(var(--category-health));
+    border-color: hsl(var(--category-health) / 0.2);
+  }
+  
+  .breaking-news {
+    background: hsl(var(--breaking-news) / 0.1);
+    color: hsl(var(--breaking-news));
+    border-color: hsl(var(--breaking-news) / 0.2);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
